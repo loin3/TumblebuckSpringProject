@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.tumblebuck.web.IndexControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.tumblebuck.web.IndexControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.tumblebuck.web.html">com.tumblebuck.web</a> &gt; IndexControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.089s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">메인페이지_로딩</td>
+<td class="success">0.089s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2020-12-02 18:42:23.253  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.tumblebuck.web.IndexControllerTest], using SpringBootContextLoader
+2020-12-02 18:42:23.254  INFO 10076 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.tumblebuck.web.IndexControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-12-02 18:42:23.255  INFO 10076 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.tumblebuck.web.IndexControllerTest]: IndexControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-12-02 18:42:23.257  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.tumblebuck.Application for test class com.tumblebuck.web.IndexControllerTest
+2020-12-02 18:42:23.259  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-12-02 18:42:23.260  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@11d172e4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@45567fe0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2402dd0e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6477d625, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7eabce1d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@8f40757, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3aac41ea, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@60b06e64, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@40cb9f49, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@68adf6b8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@30d64956, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@53f6d266]
+Hibernate: 
+    /* SELECT
+        p 
+    FROM
+        Posts p 
+    ORDER BY
+        p.id DESC */ select
+            posts0_.id as id1_0_,
+            posts0_.create_date as create_d2_0_,
+            posts0_.modified_date as modified3_0_,
+            posts0_.author as author4_0_,
+            posts0_.content as content5_0_,
+            posts0_.title as title6_0_ 
+        from
+            posts posts0_ 
+        order by
+            posts0_.id DESC
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 5.2.1</a> at 2020. 12. 2. 오후 6:42:24</p>
+</div>
+</div>
+</body>
+</html>
