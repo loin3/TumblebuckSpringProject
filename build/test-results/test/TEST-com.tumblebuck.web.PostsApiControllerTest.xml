@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tumblebuck.web.PostsApiControllerTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2020-12-02T09:42:20" hostname="DESKTOP-AAHBB7S" time="0.648">
+<testsuite name="com.tumblebuck.web.PostsApiControllerTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2020-12-02T15:23:49" hostname="DESKTOP-AAHBB7S" time="0.696">
   <properties/>
-  <testcase name="Posts_등록된다" classname="com.tumblebuck.web.PostsApiControllerTest" time="0.5">
+  <testcase name="Posts_등록된다" classname="com.tumblebuck.web.PostsApiControllerTest" time="0.519">
     <failure message="org.junit.ComparisonFailure: expected:&lt;[200 OK]&gt; but was:&lt;[302 FOUND]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[200 OK]&gt; but was:&lt;[302 FOUND]&gt;
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -65,7 +65,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="Posts_수정된다" classname="com.tumblebuck.web.PostsApiControllerTest" time="0.146">
+  <testcase name="Posts_수정된다" classname="com.tumblebuck.web.PostsApiControllerTest" time="0.176">
     <failure message="org.junit.ComparisonFailure: expected:&lt;[200 OK]&gt; but was:&lt;[302 FOUND]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[200 OK]&gt; but was:&lt;[302 FOUND]&gt;
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -129,12 +129,12 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <system-out><![CDATA[2020-12-02 18:42:14.639  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.tumblebuck.web.PostsApiControllerTest], using SpringBootContextLoader
-2020-12-02 18:42:14.643  INFO 10076 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.tumblebuck.web.PostsApiControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2020-12-02 18:42:14.644  INFO 10076 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.tumblebuck.web.PostsApiControllerTest]: PostsApiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2020-12-02 18:42:14.656  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.tumblebuck.Application for test class com.tumblebuck.web.PostsApiControllerTest
-2020-12-02 18:42:14.659  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2020-12-02 18:42:14.659  INFO 10076 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51b01402, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3164aa75, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@30a608ab, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@ccf5a12, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5d8e5f8d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@492d714b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@49cecb95, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3f271774, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@10fa452a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@327fc957, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@dd23eee, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@ac91497]
+  <system-out><![CDATA[2020-12-03 00:23:43.102  INFO 15464 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.tumblebuck.web.PostsApiControllerTest], using SpringBootContextLoader
+2020-12-03 00:23:43.105  INFO 15464 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.tumblebuck.web.PostsApiControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-12-03 00:23:43.106  INFO 15464 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.tumblebuck.web.PostsApiControllerTest]: PostsApiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-12-03 00:23:43.110  INFO 15464 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.tumblebuck.Application for test class com.tumblebuck.web.PostsApiControllerTest
+2020-12-03 00:23:43.116  INFO 15464 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-12-03 00:23:43.117  INFO 15464 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@40da5831, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@546976ff, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@55370490, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4ecf2605, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5c46f43d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4387afc4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2ef930a0, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@19b1c474, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@723d2c63, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@cba446f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6b211968, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7ca4e21c]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -144,25 +144,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.7.RELEASE)
 
-2020-12-02 18:42:14.732  INFO 10076 --- [    Test worker] c.tumblebuck.web.PostsApiControllerTest  : Starting PostsApiControllerTest on DESKTOP-AAHBB7S with PID 10076 (started by user in C:\Users\user\IdeaProjects\TumblebuckSpringProject)
-2020-12-02 18:42:14.732  INFO 10076 --- [    Test worker] c.tumblebuck.web.PostsApiControllerTest  : The following profiles are active: oauth
-2020-12-02 18:42:15.181  INFO 10076 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2020-12-02 18:42:15.285  INFO 10076 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89ms. Found 2 repository interfaces.
-2020-12-02 18:42:15.658  INFO 10076 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fd12904a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-12-02 18:42:16.124  INFO 10076 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2020-12-02 18:42:16.159  INFO 10076 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-12-02 18:42:16.159  INFO 10076 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
-2020-12-02 18:42:16.363  INFO 10076 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-12-02 18:42:16.363  INFO 10076 --- [    Test worker] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1627 ms
-2020-12-02 18:42:16.700  INFO 10076 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-12-02 18:42:16.919  INFO 10076 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-12-02 18:42:17.060  INFO 10076 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2020-12-03 00:23:43.209  INFO 15464 --- [    Test worker] c.tumblebuck.web.PostsApiControllerTest  : Starting PostsApiControllerTest on DESKTOP-AAHBB7S with PID 15464 (started by user in C:\Users\user\IdeaProjects\TumblebuckSpringProject)
+2020-12-03 00:23:43.210  INFO 15464 --- [    Test worker] c.tumblebuck.web.PostsApiControllerTest  : The following profiles are active: oauth
+2020-12-03 00:23:43.693  INFO 15464 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-12-03 00:23:43.793  INFO 15464 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90ms. Found 2 repository interfaces.
+2020-12-03 00:23:44.186  INFO 15464 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9cee7e02] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-03 00:23:44.721  INFO 15464 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-12-03 00:23:44.764  INFO 15464 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-03 00:23:44.765  INFO 15464 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-12-03 00:23:45.015  INFO 15464 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-03 00:23:45.016  INFO 15464 --- [    Test worker] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1802 ms
+2020-12-03 00:23:45.394  INFO 15464 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-03 00:23:45.689  INFO 15464 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-03 00:23:45.872  INFO 15464 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-12-02 18:42:17.169  INFO 10076 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2020-12-02 18:42:17.172  INFO 10076 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-12-02 18:42:17.399  INFO 10076 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-12-02 18:42:17.612  INFO 10076 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-03 00:23:45.994  INFO 15464 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-12-03 00:23:45.998  INFO 15464 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-12-03 00:23:46.240  INFO 15464 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-12-03 00:23:46.460  INFO 15464 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 Hibernate: 
     
     drop table posts if exists
@@ -192,19 +192,19 @@ Hibernate:
         role varchar(255) not null,
         primary key (id)
     )
-2020-12-02 18:42:18.416  INFO 10076 --- [    Test worker] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@451ae5f'
-2020-12-02 18:42:18.420  INFO 10076 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-12-02 18:42:19.273  INFO 10076 --- [    Test worker] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-12-02 18:42:19.777  INFO 10076 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4813779c, org.springframework.security.web.context.SecurityContextPersistenceFilter@13e526c4, org.springframework.security.web.header.HeaderWriterFilter@5202c0f, org.springframework.security.web.authentication.logout.LogoutFilter@5a5ea3a1, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@6e69255, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@45c87647, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4c533b9b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3614bf77, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@711f9cc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40ecc96c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fe3f610, org.springframework.security.web.session.SessionManagementFilter@63d98d88, org.springframework.security.web.access.ExceptionTranslationFilter@7b247f6f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ec1f730]
-2020-12-02 18:42:20.192  INFO 10076 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-12-02 18:42:20.257  WARN 10076 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-12-02 18:42:20.318  INFO 10076 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-12-02 18:42:20.761  INFO 10076 --- [    Test worker] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2020-12-02 18:42:20.794  INFO 10076 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 13654 (http) with context path ''
-2020-12-02 18:42:20.797  INFO 10076 --- [    Test worker] c.tumblebuck.web.PostsApiControllerTest  : Started PostsApiControllerTest in 6.133 seconds (JVM running for 10.651)
-2020-12-02 18:42:21.087  INFO 10076 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-12-02 18:42:21.088  INFO 10076 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-12-02 18:42:21.117  INFO 10076 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2020-12-03 00:23:47.342  INFO 15464 --- [    Test worker] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@e1c233e'
+2020-12-03 00:23:47.348  INFO 15464 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-03 00:23:48.271  INFO 15464 --- [    Test worker] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-12-03 00:23:48.872  INFO 15464 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@639a61c2, org.springframework.security.web.context.SecurityContextPersistenceFilter@71cdef44, org.springframework.security.web.header.HeaderWriterFilter@d220f42, org.springframework.security.web.authentication.logout.LogoutFilter@4d910190, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@29b5b75, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@1c4cf663, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@306cdff4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@62db98a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fbae988, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d8f1e9a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2cec602c, org.springframework.security.web.session.SessionManagementFilter@16d19807, org.springframework.security.web.access.ExceptionTranslationFilter@335e02ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52227c4]
+2020-12-03 00:23:49.341  INFO 15464 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-03 00:23:49.410  WARN 15464 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-03 00:23:49.475  INFO 15464 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-03 00:23:49.930  INFO 15464 --- [    Test worker] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2020-12-03 00:23:49.967  INFO 15464 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 12020 (http) with context path ''
+2020-12-03 00:23:49.971  INFO 15464 --- [    Test worker] c.tumblebuck.web.PostsApiControllerTest  : Started PostsApiControllerTest in 6.848 seconds (JVM running for 11.835)
+2020-12-03 00:23:50.286  INFO 15464 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-03 00:23:50.287  INFO 15464 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-03 00:23:50.314  INFO 15464 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 27 ms
 Hibernate: 
     /* select
         generatedAlias0 
@@ -226,11 +226,11 @@ Hibernate:
             (id, create_date, modified_date, author, content, title) 
         values
             (null, ?, ?, ?, ?, ?)
-2020-12-02 18:42:21.399 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2020-12-02T18:42:21.373402]
-2020-12-02 18:42:21.401 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [2020-12-02T18:42:21.373402]
-2020-12-02 18:42:21.402 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [author]
-2020-12-02 18:42:21.402 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [content]
-2020-12-02 18:42:21.402 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [title]
+2020-12-03 00:23:50.604 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2020-12-03T00:23:50.576328400]
+2020-12-03 00:23:50.608 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [2020-12-03T00:23:50.576328400]
+2020-12-03 00:23:50.611 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [author]
+2020-12-03 00:23:50.611 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [content]
+2020-12-03 00:23:50.611 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [title]
 Hibernate: 
     /* select
         generatedAlias0 
@@ -244,19 +244,19 @@ Hibernate:
             posts0_.title as title6_0_ 
         from
             posts posts0_
-2020-12-02 18:42:21.427 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
-2020-12-02 18:42:21.430 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([create_d2_0_] : [TIMESTAMP]) - [2020-12-02T18:42:21.373402]
-2020-12-02 18:42:21.431 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([modified3_0_] : [TIMESTAMP]) - [2020-12-02T18:42:21.373402]
-2020-12-02 18:42:21.432 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([author4_0_] : [VARCHAR]) - [author]
-2020-12-02 18:42:21.432 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([content5_0_] : [VARCHAR]) - [content]
-2020-12-02 18:42:21.432 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([title6_0_] : [VARCHAR]) - [title]
+2020-12-03 00:23:50.640 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_] : [BIGINT]) - [1]
+2020-12-03 00:23:50.644 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([create_d2_0_] : [TIMESTAMP]) - [2020-12-03T00:23:50.576328]
+2020-12-03 00:23:50.644 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([modified3_0_] : [TIMESTAMP]) - [2020-12-03T00:23:50.576328]
+2020-12-03 00:23:50.645 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([author4_0_] : [VARCHAR]) - [author]
+2020-12-03 00:23:50.646 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([content5_0_] : [VARCHAR]) - [content]
+2020-12-03 00:23:50.646 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([title6_0_] : [VARCHAR]) - [title]
 Hibernate: 
     /* delete com.tumblebuck.domain.posts.Posts */ delete 
         from
             posts 
         where
             id=?
-2020-12-02 18:42:21.452 TRACE 10076 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2020-12-03 00:23:50.673 TRACE 15464 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
