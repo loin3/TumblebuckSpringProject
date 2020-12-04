@@ -42,4 +42,6 @@ dependencies {
     compile('org.springframework.security:spring-security-test')
 
     compile('org.springframework.session:spring-session-jdbc')
+
+    compile('org.mariadb.jdbc:mariadb-java-client')
 }
