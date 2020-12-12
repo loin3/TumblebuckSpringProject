@@ -73,7 +73,9 @@ var main = {
           title: $('#projectTitle').val(),
           content: $('#projectContent').val(),
           goalFunding: $('#goalFunding').val(),
-          endDate: $('#projectEndDate').val()
+          endDate: $('#projectEndDate').val(),
+          currentFunding : 0,
+          percentage : 0
         };
 
         $.ajax({
