@@ -35,8 +35,11 @@ public class Project extends BaseTimeEntity {
     @Column
     private Float percentage;
 
+    @Column(nullable = false)
+    private String email;
+
     @Builder
-    public Project(Long id, String title, String content, LocalDate endDate, Long goalFunding, Long currentFunding, Float percentage) {
+    public Project(Long id, String title, String content, LocalDate endDate, Long goalFunding, Long currentFunding, Float percentage, String email) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -44,5 +47,6 @@ public class Project extends BaseTimeEntity {
         this.goalFunding = goalFunding;
         this.currentFunding = currentFunding;
         this.percentage = percentage;
+        this.email = email;
     }
 }

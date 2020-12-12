@@ -46,7 +46,7 @@ public class IndexController {
         return "posts-update";
     }
 
-    @GetMapping("/api/v2/post")
+    @GetMapping("/project/post")
     public String projectPost(){
         return "project-post";
     }
