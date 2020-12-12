@@ -45,4 +45,10 @@ public class IndexController {
         model.addAttribute("post", dto);
         return "posts-update";
     }
+
+    @GetMapping("/api/v2/post")
+    public String projectPost(){
+        return "project-post";
+    }
+
 }

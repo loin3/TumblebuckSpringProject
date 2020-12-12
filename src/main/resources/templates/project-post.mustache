@@ -1,0 +1,99 @@
+{{>layout/header}}
+
+<div class="container">
+
+    <form>
+        <div class="form-group">
+            <label for="projectTitle">제목</label>
+            <input type="text" class="form-control" id="projectTitle" placeholder="제목을 입력해라">
+        </div>
+
+        <div class="form-group">
+            <label for="projectContent">내용</label>
+            <textarea class="form-control" id="projectContent" rows="4" placeholder="내용을 입력해라"></textarea>
+        </div>
+
+        <div class="form-group row">
+            <label for="goalFunding" class="col-2 col-form-label">목표 금액</label>
+            <div class="col-5 offset-4">
+                <input class="form-control" type="number" id="goalFunding" placeholder="1,000,000">
+            </div>
+            <label for="goalFunding" class="col-1 col-form-label">원</label>
+        </div>
+
+        <div class="form-group row">
+            <label for="projectEndDate" class="col-2 col-form-label">끝나는 날짜</label>
+            <div class="col-10">
+                <input class="form-control" type="date" id="projectEndDate">
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-3">
+                <h4>카테고리 선택</h4>
+            </div>
+
+            <div class="col-3 offset-6 dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    카테고리 선택
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">게임</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">음악</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">공예</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">공연</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <button type="button" class="offset-10 col-1 btn btn-primary" id="btn-save">Submit</button>
+        </div>
+    </form>
+
+</div>
+
+<script>
+        function setDropdownCategory(obj){
+          var text = obj.innerText;
+          $('#dropdownMenuButton').text(text);
+        }
+      </script>
+
+<script>
+var main = {
+    init : function(){
+        var _this = this;
+        $('#btn-save').on('click', function(){
+        _this.save();
+        });
+    },
+    save : function(){
+        var data = {
+          title: $('#projectTitle').val(),
+          content: $('#projectContent').val(),
+          goalFunding: $('#goalFunding').val(),
+          endDate: $('#projectEndDate').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/v2/save',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function(){
+            alert('글이 등록되었습니다.');
+            window.location.href= '/';
+        }).fail(function(error){
+            alert(JSON.stringify(error));
+        });
+    }
+};
+
+main.init();
+
+      </script>
+
+</body>
+</html>
