@@ -18,13 +18,13 @@ public class ProjectSaveRequestDto {
     private Float percentage;
 
     @Builder
-    public ProjectSaveRequestDto(String title, String content, LocalDate endDate, Long goalFunding, Float percentage) {
+    public ProjectSaveRequestDto(String title, String content, LocalDate endDate, Long goalFunding) {
         this.title = title;
         this.content = content;
         this.endDate = endDate;
-        this.currentFunding = Long.valueOf(0);
+        this.currentFunding = 0L;
         this.goalFunding = goalFunding;
-        this.percentage = Float.valueOf(0);
+        this.percentage = (float) 0;
     }
 
     public Project toEntity(){
