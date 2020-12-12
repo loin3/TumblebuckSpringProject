@@ -50,5 +50,4 @@ public class IndexController {
     public String projectPost(){
         return "project-post";
     }
-
 }
