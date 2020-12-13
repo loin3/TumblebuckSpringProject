@@ -28,4 +28,11 @@ public class ProjectService {
                 .map(ProjectListResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public List<ProjectListResponseDto> findAllDesc(){
+        return projectRepository.findAllDesc().stream()
+                .map(ProjectListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }

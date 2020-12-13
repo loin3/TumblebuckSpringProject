@@ -7,6 +7,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="/all">모든 프로젝트 보기</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/project/post">프로젝트 등록</a>
                 </li>
                 <li class="nav-item">
@@ -32,12 +35,12 @@
         {{#hotProject}}
             <div class="col-3">
                 <div class="card h-200">
-                    <a href="#"><img class="card-img-top" src="{{picture}}" alt="" height="150"></a>
+                    <a href="#"><img class="card-img-top" src="{{#picture}}{{picture}}{{/picture}}{{^picture}}http://placehold.it/700x400{{/picture}}" alt="" height="150"></a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="/project/detail/{{id}}">{{title}}</a>
                         </h4>
-                        <h5>current funding : {{current_funding}}</h5>
+                        <h5>current funding : {{currentFunding}}</h5>
                         <h5>percentage : {{percentage}}</h5>
                     </div>
                 </div>
@@ -59,12 +62,12 @@
         {{#impendingProject}}
             <div class="col-3">
                 <div class="card h-200">
-                    <a href="#"><img class="card-img-top" src="{{picture}}" alt="" height="150"></a>
+                    <a href="#"><img class="card-img-top" src="{{#picture}}{{picture}}{{/picture}}{{^picture}}http://placehold.it/700x400{{/picture}}" alt="" height="150"></a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="/project/detail/{{id}}">{{title}}</a>
                         </h4>
-                        <h5>current funding : {{current_funding}}</h5>
+                        <h5>current funding : {{currentFunding}}</h5>
                         <h5>percentage : {{percentage}}</h5>
                     </div>
                 </div>

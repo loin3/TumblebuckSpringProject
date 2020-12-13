@@ -32,10 +32,6 @@ public class ProjectSaveRequestDto {
     }
 
     public Project toEntity(String email){
-        if(picture == null){
-            picture = "http://placehold.it/700x400";
-        }
-
         return Project.builder()
                 .title(title)
                 .content(content)

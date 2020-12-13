@@ -25,10 +25,10 @@ public class IndexController {
         return "main";
     }
 
-    @GetMapping("/posts/save")
-    public String postsSave(){
-        return "posts-save";
-    }
+//    @GetMapping("/posts/save")
+//    public String postsSave(){
+//        return "posts-save";
+//    }
 
 //    @GetMapping("/")
 //    public String index(Model model){
@@ -53,12 +53,23 @@ public class IndexController {
         return "main";
     }
 
-    @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model){
-        PostsResponseDto dto = postsService.findById(id);
-        model.addAttribute("post", dto);
-        return "posts-update";
+    @GetMapping("/all")
+    public String showAllProject(Model model){
+        model.addAttribute("project", projectService.findAllDesc());
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+        }
+        return "allProject";
     }
+
+//    @GetMapping("/posts/update/{id}")
+//    public String postsUpdate(@PathVariable Long id, Model model){
+//        PostsResponseDto dto = postsService.findById(id);
+//        model.addAttribute("post", dto);
+//        return "posts-update";
+//    }
 
     @GetMapping("/project/post")
     public String projectPost(){

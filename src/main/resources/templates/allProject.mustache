@@ -29,10 +29,10 @@
 
     <div class="row text-center">
         <div class="col-12">
-            <h5>인기 추천 프로젝트</h5>
+            <h5>전체 프로젝트</h5>
         </div>
 
-        {{#hotProject}}
+        {{#project}}
             <div class="col-3">
                 <div class="card h-200">
                     <a href="#"><img class="card-img-top" src="{{#picture}}{{picture}}{{/picture}}{{^picture}}http://placehold.it/700x400{{/picture}}" alt="" height="150"></a>
@@ -45,39 +45,12 @@
                     </div>
                 </div>
             </div>
-        {{/hotProject}}
-        {{^hotProject}}
+        {{/project}}
+        {{^project}}
             <div class="col-12">
                 <h4>프로젝트가 없습니다</h4>
             </div>
-        {{/hotProject}}
-
-    </div>
-
-    <div class="row text-center">
-        <div class="col-12">
-            <h5>성공 임박 프로젝트</h5>
-        </div>
-
-        {{#impendingProject}}
-            <div class="col-3">
-                <div class="card h-200">
-                    <a href="#"><img class="card-img-top" src="{{#picture}}{{picture}}{{/picture}}{{^picture}}http://placehold.it/700x400{{/picture}}" alt="" height="150"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="/project/detail/{{id}}">{{title}}</a>
-                        </h4>
-                        <h5>current funding : {{currentFunding}}</h5>
-                        <h5>percentage : {{percentage}}</h5>
-                    </div>
-                </div>
-            </div>
-        {{/impendingProject}}
-        {{^impendingProject}}
-            <div class="col-12">
-                <h4>프로젝트가 없습니다</h4>
-            </div>
-        {{/impendingProject}}
+        {{/project}}
 
     </div>
 
