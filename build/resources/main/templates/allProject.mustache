@@ -1,0 +1,59 @@
+{{>layout/header}}
+
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/main">벅블텀</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/all">모든 프로젝트 보기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/project/post">프로젝트 등록</a>
+                </li>
+                <li class="nav-item">
+                    {{#name}}
+                        Logged in as: <span id="user">{{name}}</span>
+                        <a class="nav-link" href="/logout" role="button">Logout</a>
+                    {{/name}}
+                    {{^name}}
+                        <a class="nav-link" href="/oauth2/authorization/google">Login</a>
+                    {{/name}}
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <hr>
+
+    <div class="row text-center">
+        <div class="col-12">
+            <h5>전체 프로젝트</h5>
+        </div>
+
+        {{#project}}
+            <div class="col-3">
+                <div class="card h-200">
+                    <a href="#"><img class="card-img-top" src="{{#picture}}{{picture}}{{/picture}}{{^picture}}http://placehold.it/700x400{{/picture}}" alt="" height="150"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="/project/detail/{{id}}">{{title}}</a>
+                        </h4>
+                        <h5>current funding : {{currentFunding}}</h5>
+                        <h5>percentage : {{percentage}}</h5>
+                    </div>
+                </div>
+            </div>
+        {{/project}}
+        {{^project}}
+            <div class="col-12">
+                <h4>프로젝트가 없습니다</h4>
+            </div>
+        {{/project}}
+
+    </div>
+
+</div>
+
+{{>layout/footer}}
