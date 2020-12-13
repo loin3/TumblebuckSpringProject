@@ -17,9 +17,10 @@ public class ProjectSaveRequestDto {
     private Long goalFunding;
     private Float percentage;
     private String email;
+    private String picture;
 
     @Builder
-    public ProjectSaveRequestDto(String title, String content, LocalDate endDate, Long currentFunding, Long goalFunding, Float percentage, String email) {
+    public ProjectSaveRequestDto(String title, String content, LocalDate endDate, Long currentFunding, Long goalFunding, Float percentage, String email, String picture) {
         this.title = title;
         this.content = content;
         this.endDate = endDate;
@@ -27,9 +28,14 @@ public class ProjectSaveRequestDto {
         this.goalFunding = goalFunding;
         this.percentage = percentage;
         this.email = email;
+        this.picture = picture;
     }
 
     public Project toEntity(String email){
+        if(picture == null){
+            picture = "http://placehold.it/700x400";
+        }
+
         return Project.builder()
                 .title(title)
                 .content(content)
@@ -38,6 +44,7 @@ public class ProjectSaveRequestDto {
                 .goalFunding(goalFunding)
                 .percentage(percentage)
                 .email(email)
+                .picture(picture)
                 .build();
     }
 }

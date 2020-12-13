@@ -9,6 +9,11 @@
         </div>
 
         <div class="form-group">
+            <label for="projectPicture">사진</label>
+            <input type="text" class="form-control" id="projectPicture" placeholder="사진을 넣어라">
+        </div>
+
+        <div class="form-group">
             <label for="projectContent">내용</label>
             <textarea class="form-control" id="projectContent" rows="4" placeholder="내용을 입력해라"></textarea>
         </div>
@@ -74,6 +79,7 @@ var main = {
           content: $('#projectContent').val(),
           goalFunding: $('#goalFunding').val(),
           endDate: $('#projectEndDate').val(),
+          projectPicture: $('#projectPicture').val(),
           currentFunding : 0,
           percentage : 0
         };

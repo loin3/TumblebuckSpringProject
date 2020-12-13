@@ -5,6 +5,7 @@ import com.tumblebuck.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -38,8 +39,11 @@ public class Project extends BaseTimeEntity {
     @Column(nullable = false)
     private String email;
 
+    @Column
+    private String picture;
+
     @Builder
-    public Project(Long id, String title, String content, LocalDate endDate, Long goalFunding, Long currentFunding, Float percentage, String email) {
+    public Project(Long id, String title, String content, LocalDate endDate, Long goalFunding, Long currentFunding, Float percentage, String email, String picture) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -48,5 +52,6 @@ public class Project extends BaseTimeEntity {
         this.currentFunding = currentFunding;
         this.percentage = percentage;
         this.email = email;
+        this.picture = picture;
     }
 }
