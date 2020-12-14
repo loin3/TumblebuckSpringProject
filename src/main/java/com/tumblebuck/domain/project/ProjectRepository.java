@@ -16,9 +16,15 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
     @Query(nativeQuery = true, value = "select * from project p where p.percentage > 95 and p.end_date between now() and date_Add(now(), interval 1 day)")
     List<Project> findImpendingProject();
 
-    @Query(nativeQuery = true, value = "select * from project p where p.email = ?0")
+    @Query(nativeQuery = true, value = "select * from project p where p.email = ?1")
     List<Project> findByEmail(String email);
 
-    @Query(nativeQuery = true, value = "select * from project p where p.title = ?0")
+    @Query(nativeQuery = true, value = "select * from project p where p.title = ?1")
     Optional<Project> findByTitle(String title);
+
+    @Query(nativeQuery = true, value = "select count(*) from funding f where f.title = (select title from project where id = ?1) ")
+    Long countDonateById(Long id);
+
+    @Query
+    Optional<Project> findById(Long id);
 }

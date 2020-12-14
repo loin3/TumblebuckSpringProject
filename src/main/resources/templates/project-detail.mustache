@@ -1,7 +1,7 @@
 {{>layout/header}}
 
 <div class="container">
-
+    {{#project}}
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/main">벅블텀</a>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -29,31 +29,49 @@
 
     <div class="row text-center">
         <div class="col-12">
-            <h5>전체 프로젝트</h5>
+            <h3>{{title}}</h3>
+            <label>제작자 : {{email}}</label>
         </div>
-
-        {{#project}}
-            <div class="col-3">
-                <div class="card h-200">
-                    <a href="#"><img class="card-img-top" src="{{#picture}}{{picture}}{{/picture}}{{^picture}}http://placehold.it/700x400{{/picture}}" alt="" height="150"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="/project/detail/?id={{id}}">{{title}}</a>
-                        </h4>
-                        <h5>current funding : {{currentFunding}}</h5>
-                        <h5>percentage : {{percentage}}</h5>
-                    </div>
-                </div>
-            </div>
-        {{/project}}
-        {{^project}}
-            <div class="col-12">
-                <h4>프로젝트가 없습니다</h4>
-            </div>
-        {{/project}}
-
     </div>
 
+    <div class="row">
+        <div class="col-8">
+            <img width=700 height=500 src="{{picture}}">
+        </div>
+        <div class="col-4">
+            <div>
+                <label><small>모인금액</small></label>
+                <div>
+                    <label style="font-size: 2em;">{{currentFunding}}</label>원
+                </div>
+                <label>{{percentage}}%</label>
+            </div>
+            <br>
+            <div>
+                <label><small>마감 시간</small></label>
+                <div>
+                    <label style="font-size: 2em;">{{endDate}}</label>
+                </div>
+            </div>
+            <br>
+            <div>
+                <label><small>후원자</small></label>
+                <div>
+                    <label style="font-size: 2em;">{{#donate}}{{donate}}{{/donate}}</label>명
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary">후원하기</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" style="padding-left: 30px; padding-right: 30px;">
+        {{content}}
+    </div>
+
+    {{/project}}
 </div>
 
 {{>layout/footer}}

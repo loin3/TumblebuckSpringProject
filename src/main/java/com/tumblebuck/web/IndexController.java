@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 
@@ -42,7 +43,7 @@ public class IndexController {
 //    }
 
     @GetMapping("/")
-    public String mainPage(Model model){
+    public String showMainPage(Model model){
         model.addAttribute("hotProject", projectService.findHotProject());
         //model.addAttribute("impendingProject", projectService.findImpendingProject());
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
@@ -72,7 +73,19 @@ public class IndexController {
 //    }
 
     @GetMapping("/project/post")
-    public String projectPost(){
+    public String showProjectPost(){
         return "project-post";
+    }
+
+    @GetMapping("/project/detail")
+    public String showProjectDetail(@RequestParam String id, Model model){
+        model.addAttribute("project", projectService.findById(Long.parseLong(id)));
+        model.addAttribute("donate", projectService.countDonateById(Long.parseLong(id)));
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+        }
+        return "project-detail";
     }
 }
