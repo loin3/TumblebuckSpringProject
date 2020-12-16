@@ -7,21 +7,21 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class FundRequestDto {
-    String title;
+public class FundSaveRequestDto {
+    Long pid;
     String email;
     Long fundMoney;
 
     @Builder
-    public FundRequestDto(String title, String email, Long fundMoney) {
-        this.title = title;
+    public FundSaveRequestDto(Long pid, String email, Long fundMoney) {
+        this.pid = pid;
         this.email = email;
         this.fundMoney = fundMoney;
     }
 
     public Funding toEntity(String email){
         return Funding.builder()
-                .title(title)
+                .pid(pid)
                 .email(email)
                 .fundMoney(fundMoney)
                 .build();

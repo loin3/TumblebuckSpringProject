@@ -18,17 +18,17 @@ public class Funding extends BaseTimeEntity {
     @Column(nullable = false)
     private String email;
 
-    @Column(length = 500, nullable = false)
-    private String title;
+    @Column
+    private Long pid;
 
     @Column
     private Long fundMoney;
 
     @Builder
-    public Funding(Long id, String email, String title, Long fundMoney) {
+    public Funding(Long id, String email, Long pid, Long fundMoney) {
         this.id = id;
         this.email = email;
-        this.title = title;
+        this.pid = pid;
         this.fundMoney = fundMoney;
     }
 }

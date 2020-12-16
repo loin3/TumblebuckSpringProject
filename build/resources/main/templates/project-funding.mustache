@@ -1,0 +1,66 @@
+{{>layout/header}}
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+            <h3>{{title}}</h3>
+            <label>제작자 : {{userEmail}}</label>
+            <br>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="money" class="col-2 col-form-label">후원 금액</label>
+        <div class="col-5 offset-4">
+            <input class="form-control" type="numbber" id="money" placeholder="1,000,000">
+        </div>
+        <label for="money" class="col-1 col-form-label">원</label>
+    </div>
+
+    <div class="row text-center">
+        <div class="offset-4 col-4">
+            <button type="button" class="btn btn-outline-danger btn-block" id="funding">후원하기</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var main = {
+
+    init : function(){
+        var _this = this;
+        $('#funding').on('click', function(){
+            if($('#money').val() == '' || $('#money').val() == null){
+                alert('금액을 입력하시오')
+            }else{
+                _this.fund();
+            }
+        });
+    },
+    fund : function(){
+        var data = {
+            fundMoney: $('#money').val(),
+            pid: {{id}}
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/v2/fund',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function(){
+            alert('후원되었습니다.');
+            window.location.href= '/project/detail/?id={{id}}';
+        }).fail(function(error){
+            alert(JSON.stringify(error));
+        });
+    }
+};
+
+main.init();
+</script>
+
+</body>
+</html>

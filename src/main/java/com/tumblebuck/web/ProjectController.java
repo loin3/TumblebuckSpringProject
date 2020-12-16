@@ -3,8 +3,7 @@ package com.tumblebuck.web;
 import com.tumblebuck.config.auth.dto.SessionUser;
 import com.tumblebuck.domain.funding.FundingRepository;
 import com.tumblebuck.domain.project.ProjectRepository;
-import com.tumblebuck.domain.project.Tag;
-import com.tumblebuck.web.dto.FundRequestDto;
+import com.tumblebuck.web.dto.FundSaveRequestDto;
 import com.tumblebuck.web.dto.ProjectSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 
@@ -29,8 +28,8 @@ public class ProjectController {
         return projectRepository.save(requestDto.toEntity(email)).getId();
     }
 
-    @PostMapping("/api/v2/funding")
-    public Long fund(@RequestBody FundRequestDto requestDto){
+    @PostMapping("/api/v2/fund")
+    public Long fund(@RequestBody FundSaveRequestDto requestDto){
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
         String email = user.getEmail();
         return fundingRepository.save(requestDto.toEntity(email)).getId();

@@ -73,7 +73,12 @@ public class IndexController {
 //    }
 
     @GetMapping("/project/post")
-    public String showProjectPost(){
+    public String showProjectPost(Model model){
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+        }
         return "project-post";
     }
 
@@ -87,5 +92,17 @@ public class IndexController {
             model.addAttribute("userEmail", user.getEmail());
         }
         return "project-detail";
+    }
+
+    @GetMapping("/project/funding")
+    public String showProjectFunding(@RequestParam("id") Long id, @RequestParam("title") String title, Model model){
+        model.addAttribute("title", title);
+        model.addAttribute("id", id);
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+        }
+        return "project-funding";
     }
 }

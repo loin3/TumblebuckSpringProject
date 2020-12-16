@@ -22,7 +22,7 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
     @Query(nativeQuery = true, value = "select * from project p where p.title = ?1")
     Optional<Project> findByTitle(String title);
 
-    @Query(nativeQuery = true, value = "select count(*) from funding f where f.title = (select title from project where id = ?1) ")
+    @Query(nativeQuery = true, value = "select count(*) from funding f where f.pid = ?1 ")
     Long countDonateById(Long id);
 
     @Query
