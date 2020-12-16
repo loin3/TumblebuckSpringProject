@@ -42,8 +42,12 @@ public class Project extends BaseTimeEntity {
     @Column(columnDefinition = "TEXT")
     private String picture;
 
+    @Enumerated(EnumType.ORDINAL)
+    @Column
+    private Tag tag;
+
     @Builder
-    public Project(Long id, String title, String content, LocalDate endDate, Long goalFunding, Long currentFunding, Float percentage, String email, String picture) {
+    public Project(Long id, String title, String content, LocalDate endDate, Long goalFunding, Long currentFunding, Float percentage, String email, String picture, Tag tag) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -53,5 +57,6 @@ public class Project extends BaseTimeEntity {
         this.percentage = percentage;
         this.email = email;
         this.picture = picture;
+        this.tag = tag;
     }
 }

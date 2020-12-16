@@ -1,6 +1,7 @@
 package com.tumblebuck.web.dto;
 
 import com.tumblebuck.domain.project.Project;
+import com.tumblebuck.domain.project.Tag;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ public class ProjectResponseDto {
     private String picture;
     private Long currentFunding;
     private Float percentage;
+    private Tag tag;
 
     public ProjectResponseDto(Project entity) {
         this.id = entity.getId();
@@ -27,5 +29,6 @@ public class ProjectResponseDto {
         this.percentage = entity.getPercentage();
         this.email = entity.getEmail();
         this.picture = entity.getPicture();
+        this.tag = entity.getTag();
     }
 }

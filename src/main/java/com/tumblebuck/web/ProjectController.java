@@ -3,6 +3,7 @@ package com.tumblebuck.web;
 import com.tumblebuck.config.auth.dto.SessionUser;
 import com.tumblebuck.domain.funding.FundingRepository;
 import com.tumblebuck.domain.project.ProjectRepository;
+import com.tumblebuck.domain.project.Tag;
 import com.tumblebuck.web.dto.FundRequestDto;
 import com.tumblebuck.web.dto.ProjectSaveRequestDto;
 import lombok.RequiredArgsConstructor;

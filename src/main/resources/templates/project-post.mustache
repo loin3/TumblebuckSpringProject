@@ -43,10 +43,11 @@
                     카테고리 선택
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">게임</a>
-                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">음악</a>
-                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">공예</a>
-                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">공연</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">GAME</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">CONCERT</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">DESIGN</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">CARTOON</a>
+                    <a class="dropdown-item" href="#" onclick="setDropdownCategory(this)">CRAFT</a>
                 </div>
             </div>
         </div>
@@ -63,7 +64,7 @@
           var text = obj.innerText;
           $('#dropdownMenuButton').text(text);
         }
-      </script>
+</script>
 
 <script>
 var main = {
@@ -81,6 +82,7 @@ var main = {
           goalFunding: $('#goalFunding').val(),
           endDate: $('#projectEndDate').val(),
           picture: $('#projectPicture').val(),
+          str_tag: $('#dropdownMenuButton').text(),
           currentFunding : 0,
           percentage : 0
         };
