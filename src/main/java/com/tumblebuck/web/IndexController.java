@@ -1,5 +1,6 @@
 package com.tumblebuck.web;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.tumblebuck.config.auth.dto.SessionUser;
 import com.tumblebuck.service.posts.PostsService;
 import com.tumblebuck.service.project.ProjectService;
@@ -22,7 +23,14 @@ public class IndexController {
     private final ProjectService projectService;
 
     @GetMapping
-    public String index(){
+    public String index(Model model) {
+        model.addAttribute("hotProject", projectService.findHotProject());
+        //model.addAttribute("impendingProject", projectService.findImpendingProject());
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+        }
         return "main";
     }
 
