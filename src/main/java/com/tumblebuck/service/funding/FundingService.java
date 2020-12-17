@@ -21,4 +21,11 @@ public class FundingService {
                 .map(FundResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public List<FundResponseDto> findMyFundedByIdMost(Long id){
+        return fundingRepository.findByProjectDescFundMoney(id).stream()
+                .map(FundResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }

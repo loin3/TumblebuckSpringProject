@@ -1,9 +1,9 @@
 package com.tumblebuck.web;
 
 import com.tumblebuck.service.posts.PostsService;
-import com.tumblebuck.web.dto.PostsResponseDto;
-import com.tumblebuck.web.dto.PostsSaveRequestDto;
-import com.tumblebuck.web.dto.PostsUpdateRequestDto;
+import com.tumblebuck.web.dto.postDto.PostsResponseDto;
+import com.tumblebuck.web.dto.postDto.PostsSaveRequestDto;
+import com.tumblebuck.web.dto.postDto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

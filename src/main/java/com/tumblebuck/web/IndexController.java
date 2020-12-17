@@ -1,16 +1,13 @@
 package com.tumblebuck.web;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.tumblebuck.config.auth.dto.SessionUser;
 import com.tumblebuck.service.funding.FundingService;
 import com.tumblebuck.service.posts.PostsService;
 import com.tumblebuck.service.project.ProjectService;
-import com.tumblebuck.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
@@ -26,6 +23,18 @@ public class IndexController {
 
     @GetMapping
     public String index(Model model) {
+        model.addAttribute("hotProject", projectService.findHotProject());
+        //model.addAttribute("impendingProject", projectService.findImpendingProject());
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+        }
+        return "main";
+    }
+
+    @GetMapping("/")
+    public String showMainPage(Model model){
         model.addAttribute("hotProject", projectService.findHotProject());
         //model.addAttribute("impendingProject", projectService.findImpendingProject());
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
@@ -52,17 +61,7 @@ public class IndexController {
 //        return "index";
 //    }
 
-    @GetMapping("/")
-    public String showMainPage(Model model){
-        model.addAttribute("hotProject", projectService.findHotProject());
-        //model.addAttribute("impendingProject", projectService.findImpendingProject());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
-        if (user != null) {
-            model.addAttribute("name", user.getName());
-            model.addAttribute("userEmail", user.getEmail());
-        }
-        return "main";
-    }
+
 
     @GetMapping("/all")
     public String showAllProject(Model model){
@@ -129,13 +128,20 @@ public class IndexController {
     }
 
     @GetMapping("project/v1/mine/manage")
-    public String showFundingMyFunded(@RequestParam("id") Long id, Model model){
+    public String showFundingMyFunded(@RequestParam("id") Long id, @RequestParam("arrange") int arrange,Model model){
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("name", user.getName());
             model.addAttribute("userEmail", user.getEmail());
+
+            model.addAttribute("id", id);
         }
-        model.addAttribute("funding", fundingService.findMyFundedByIdDesc(id));
+        if(arrange == 2){
+            model.addAttribute("funding", fundingService.findMyFundedByIdMost(id));
+        }else{
+            model.addAttribute("funding", fundingService.findMyFundedByIdDesc(id));
+        }
+
 
         return "funding-myFunded";
     }

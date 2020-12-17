@@ -2,10 +2,10 @@ package com.tumblebuck.service.posts;
 
 import com.tumblebuck.domain.posts.Posts;
 import com.tumblebuck.domain.posts.PostsRepository;
-import com.tumblebuck.web.dto.PostsListResponseDto;
-import com.tumblebuck.web.dto.PostsResponseDto;
-import com.tumblebuck.web.dto.PostsSaveRequestDto;
-import com.tumblebuck.web.dto.PostsUpdateRequestDto;
+import com.tumblebuck.web.dto.postDto.PostsListResponseDto;
+import com.tumblebuck.web.dto.postDto.PostsResponseDto;
+import com.tumblebuck.web.dto.postDto.PostsSaveRequestDto;
+import com.tumblebuck.web.dto.postDto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

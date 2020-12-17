@@ -12,7 +12,7 @@ public interface FundingRepository extends JpaRepository<Funding, Long> {
     @Query(nativeQuery = true, value = "select * from funding f where f.pid = ?1 order by f.created_date desc")
     List<Funding> findByProjectDescCurrent(Long id);
 
-    @Query(nativeQuery = true, value = "select * from funding f where f.pid = ?1 order by f.fundMoney desc")
+    @Query(nativeQuery = true, value = "select * from funding f where f.pid = ?1 order by f.fund_money desc")
     List<Funding> findByProjectDescFundMoney(Long id);
 
     @Query(nativeQuery = true, value = "SELECT * FROM funding f where month(f.created_date) = ?1")

@@ -1,4 +1,4 @@
-package com.tumblebuck.web.dto;
+package com.tumblebuck.web.dto.postDto;
 
 import com.tumblebuck.domain.posts.Posts;
 import lombok.Builder;
