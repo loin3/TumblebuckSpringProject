@@ -19,6 +19,9 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
     @Query(nativeQuery = true, value = "select * from project p where p.email = ?1")
     List<Project> findByEmail(String email);
 
+    @Query(nativeQuery = true, value = "select * from project p where p.id in (select pid from funding where email = ?1)")
+    List<Project> findFundedByEmail(String email);
+
     @Query(nativeQuery = true, value = "select * from project p where p.title = ?1")
     Optional<Project> findByTitle(String title);
 

@@ -2,6 +2,7 @@ package com.tumblebuck.web;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.tumblebuck.config.auth.dto.SessionUser;
+import com.tumblebuck.service.funding.FundingService;
 import com.tumblebuck.service.posts.PostsService;
 import com.tumblebuck.service.project.ProjectService;
 import com.tumblebuck.web.dto.PostsResponseDto;
@@ -21,6 +22,7 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
     private final ProjectService projectService;
+    private final FundingService fundingService;
 
     @GetMapping
     public String index(Model model) {
@@ -70,7 +72,7 @@ public class IndexController {
             model.addAttribute("name", user.getName());
             model.addAttribute("userEmail", user.getEmail());
         }
-        return "allProject";
+        return "project-all";
     }
 
 //    @GetMapping("/posts/update/{id}")
@@ -112,5 +114,41 @@ public class IndexController {
             model.addAttribute("userEmail", user.getEmail());
         }
         return "project-funding";
+    }
+
+    @GetMapping("/project/v1/myFunded")
+    public String showProjectMyFunded(Model model){
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+            model.addAttribute("project", projectService.findMyFundedByEmail(user.getEmail()));
+        }
+
+        return "project-myFunded";
+    }
+
+    @GetMapping("project/v1/mine/manage")
+    public String showFundingMyFunded(@RequestParam("id") Long id, Model model){
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+        }
+        model.addAttribute("funding", fundingService.findMyFundedByIdDesc(id));
+
+        return "funding-myFunded";
+    }
+
+    @GetMapping("project/v1/mine")
+    public String showProjectMine(Model model){
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
+            model.addAttribute("project", projectService.findMineByEmail(user.getEmail()));
+        }
+
+        return "project-mine";
     }
 }

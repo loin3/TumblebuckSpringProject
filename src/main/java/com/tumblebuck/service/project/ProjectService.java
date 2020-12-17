@@ -1,7 +1,9 @@
 package com.tumblebuck.service.project;
 
+import com.tumblebuck.domain.funding.FundingRepository;
 import com.tumblebuck.domain.project.Project;
 import com.tumblebuck.domain.project.ProjectRepository;
+import com.tumblebuck.web.dto.FundResponseDto;
 import com.tumblebuck.web.dto.ProjectListResponseDto;
 import com.tumblebuck.web.dto.ProjectResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -47,4 +49,19 @@ public class ProjectService {
     public Long countDonateById(Long id){
         return projectRepository.countDonateById(id);
     }
+
+    @Transactional(readOnly = true)
+    public List<ProjectListResponseDto> findMineByEmail(String email){
+        return projectRepository.findByEmail(email).stream()
+                .map(ProjectListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<ProjectListResponseDto> findMyFundedByEmail(String email){
+        return projectRepository.findFundedByEmail(email).stream()
+                .map(ProjectListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
 }

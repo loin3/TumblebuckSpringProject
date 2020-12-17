@@ -1,0 +1,35 @@
+{{>layout/header}}
+
+<div class="row text-center">
+    <div class="col-12">
+        <h5>내가 올린 프로젝트</h5>
+    </div>
+
+    {{#project}}
+        <div class="col-3">
+            <div class="card h-200">
+                <a href="#"><img class="card-img-top" src="{{#picture}}{{picture}}{{/picture}}{{^picture}}http://placehold.it/700x400{{/picture}}" alt="" height="150"></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="/project/detail/?id={{id}}">{{title}}</a>
+                    </h4>
+                    <h5>current funding : {{currentFunding}}</h5>
+                    <h5>percentage : {{percentage}}</h5>
+                </div>
+                <div class="card-footer">
+                    <a href="/project/v1/mine/manage/?id={{id}}" class="btn btn-outline-danger">관리하기</a>
+                </div>
+            </div>
+        </div>
+    {{/project}}
+    {{^project}}
+        <div class="col-12">
+            <h4>프로젝트가 없습니다</h4>
+        </div>
+    {{/project}}
+
+</div>
+
+</div>
+
+{{>layout/footer}}

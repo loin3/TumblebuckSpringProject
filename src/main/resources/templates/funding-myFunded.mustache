@@ -1,0 +1,22 @@
+{{>layout/header}}
+
+<table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+        <th>날짜</th>
+        <th>이메일</th>
+        <th>금액</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#funding}}
+        <tr>
+            <td>{{createDate}}</td>
+            <td>{{email}}</td>
+            <td>{{fundMoney}}</td>
+        </tr>
+    {{/funding}}
+    </tbody>
+</table>
+
+{{>layout/footer}}
