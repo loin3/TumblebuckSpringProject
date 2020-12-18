@@ -3,6 +3,7 @@ package com.tumblebuck.service.project;
 import com.tumblebuck.domain.funding.FundingRepository;
 import com.tumblebuck.domain.project.Project;
 import com.tumblebuck.domain.project.ProjectRepository;
+import com.tumblebuck.domain.project.Tag;
 import com.tumblebuck.web.dto.FundResponseDto;
 import com.tumblebuck.web.dto.ProjectListResponseDto;
 import com.tumblebuck.web.dto.ProjectResponseDto;
@@ -38,6 +39,35 @@ public class ProjectService {
                 .map(ProjectListResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public List<ProjectListResponseDto> findAllByTagDesc(String str_tag){
+        Tag tag;
+        switch (str_tag){
+            case "GAME":
+                tag = Tag.GAME;
+                break;
+            case "CONCERT":
+                tag = Tag.CONCERT;
+                break;
+            case "DESIGN":
+                tag = Tag.DESIGN;
+                break;
+            case "CARTOON":
+                tag = Tag.CARTOON;
+                break;
+            case "CRAFT":
+                tag = Tag.CRAFT;
+                break;
+            default:
+                tag = Tag.ETC;
+                break;
+        }
+        return projectRepository.findAllByTagDesc(tag).stream()
+                .map(ProjectListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
 
     @Transactional(readOnly = true)
     public ProjectResponseDto findById(Long id){

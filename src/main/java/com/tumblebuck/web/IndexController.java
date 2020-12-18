@@ -64,8 +64,12 @@ public class IndexController {
 
 
     @GetMapping("/all")
-    public String showAllProject(Model model){
-        model.addAttribute("project", projectService.findAllDesc());
+    public String showAllProject(@RequestParam String tag, Model model){
+        if(tag.equals("all")){
+            model.addAttribute("project", projectService.findAllDesc());
+        }else{
+            model.addAttribute("project", projectService.findAllByTagDesc(tag));
+        }
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("name", user.getName());

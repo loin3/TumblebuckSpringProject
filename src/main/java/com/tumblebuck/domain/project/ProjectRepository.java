@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProjectRepository extends JpaRepository<Project, Long> {
+    @Query("SELECT p FROM Project p where p.tag = ?1 ORDER BY p.id DESC")
+    List<Project> findAllByTagDesc(Tag tag);
+
     @Query("SELECT p FROM Project p ORDER BY p.id DESC")
     List<Project> findAllDesc();
 

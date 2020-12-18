@@ -2,7 +2,22 @@
 
     <div class="row text-center">
         <div class="col-12">
-            <h5>전체 프로젝트</h5>
+            <h5>프로젝트 보여주기</h5>
+        </div>
+
+        <div class="col-1 offset-11 dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                전체
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/all/?tag=all" onclick="setDropdownCategory(this)">ALL</a>
+                <a class="dropdown-item" href="/all/?tag=GAME" onclick="setDropdownCategory(this)">GAME</a>
+                <a class="dropdown-item" href="/all/?tag=CONCERT" onclick="setDropdownCategory(this)">CONCERT</a>
+                <a class="dropdown-item" href="/all/?tag=CARTOON" onclick="setDropdownCategory(this)">CARTOON</a>
+                <a class="dropdown-item" href="/all/?tag=DESIGN" onclick="setDropdownCategory(this)">DESIGN</a>
+                <a class="dropdown-item" href="/all/?tag=CRAFT" onclick="setDropdownCategory(this)">CRAFT</a>
+                <a class="dropdown-item" href="/all/?tag=ETC" onclick="setDropdownCategory(this)">ETC</a>
+            </div>
         </div>
 
         {{#project}}
@@ -28,5 +43,12 @@
     </div>
 
 </div>
+
+<script>
+        function setDropdownCategory(obj){
+          var text = obj.innerText;
+          $('#dropdownMenuButton').text(text);
+        }
+</script>
 
 {{>layout/footer}}
